@@ -118,7 +118,6 @@
         document.getElementById('local_time').innerHTML=data.location.localtime;
 
         var h=data.current.temperature;
-        // Reasonable bounds within the context of DOM; 100% height over-extends and we want to be able to see the thermometer
         if (h>88)
           h=88;
         else if (h<15)
@@ -131,8 +130,6 @@
           color='blue';
         document.getElementById('thermometer_inner').style.background=color;
         document.getElementById('thermometer_inner').style.height=h+'%';
-        /* If its raining its raining, getting the current rain chance makes no sense. Its a boolean. So I have no idea
-        why the lab asks for the current rain chance. Default is in MM*/
         document.getElementById('precip_today').innerHTML = data.current.precip+' IN';
         document.getElementById('humidity_today').innerHTML = data.current.humidity+'%';
         document.getElementById('wind_today').innerHTML = data.current.wind_speed+" "+data.current.wind_dir;
